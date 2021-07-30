@@ -1,7 +1,9 @@
 import { colors } from "../helpers/colors.js";
+import { barOptions } from "../helpers/barOptions.js";
+import { lineOptions } from "../helpers/lineOptions.js";
 
-var myChart;
-var myChart1;
+let myChart;
+let myChart1;
 
 export async function getTrends() {
   const keywords = [];
@@ -37,50 +39,21 @@ function drawChart(data, keywords) {
     myChart1.destroy();
   }
 
-  var lineElement = document.getElementById("lineChart").getContext("2d");
-  myChart = new Chart(lineElement, {
-    type: "line",
-    data: {
-      labels: data.xAxis,
-      datasets: mapMultiLine(data, keywords),
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
-  });
+  let lineElement = document.getElementById("lineChart").getContext("2d");
+  lineOptions.data.labels = data.xAxis;
+  lineOptions.data.datasets = mapMultiLine(data, keywords);
+  myChart = new Chart(lineElement, lineOptions);
 
-  var barElement = document.getElementById("barChart").getContext("2d");
-  myChart1 = new Chart(barElement, {
-    type: "bar",
-    data: {
-      labels: keywords,
-      datasets: [
-        {
-          label: "Searches",
-          data: data.average,
-          backgroundColor: colors,
-          borderColor: colors,
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
-  });
+  let barElement = document.getElementById("barChart").getContext("2d");
+  barOptions.data.labels = keywords;
+  barOptions.data.datasets[0].data = data.average;
+  myChart1 = new Chart(barElement, barOptions);
 }
 
 function mapMultiLine(data, keywords) {
   const mappedData = [];
 
-  for (var i = 0; i < keywords.length; i++) {
+  for (let i = 0; i < keywords.length; i++) {
     const value = [];
     data.yAxis.forEach((element) => {
       value.push(element[i]);
