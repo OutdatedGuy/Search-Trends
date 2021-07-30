@@ -6,3 +6,14 @@
   margin: 0%;
   padding: 0%;
 }
+
+html {
+  /* dark background */
+  /* all dark mode theme includinh text */
+  background: #1a1a1a;
+  color: #d9d9d9;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
