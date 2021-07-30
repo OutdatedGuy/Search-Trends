@@ -5,7 +5,7 @@ async function getTrends() {
   const keywords = [];
   const element = document.getElementsByClassName("word");
   console.log(element.length);
-  for (var i = 0; i < element.length; i++) {
+  for (let i = 0; i < element.length; i++) {
     keywords.push(element[i].value);
   }
 
@@ -56,23 +56,20 @@ function drawChart(data, keywords) {
     type: "bar",
     data: {
       labels: keywords,
-      datasets: [{
-        label: "Trending",
-        data: data.average,
-        backgroundColor: colors,
-        borderColor: colors,
-      }],
+      datasets: [
+        {
+          label: "Searches",
+          data: data.average,
+          backgroundColor: colors,
+          borderColor: colors,
+        },
+      ],
     },
     options: {
       scales: {
         y: {
           beginAtZero: true,
         },
-      },
-      plugins: {
-        title: {
-          color: "#FFFFFF",
-        }
       },
     },
   });
@@ -81,7 +78,7 @@ function drawChart(data, keywords) {
 function mapMultiLine(data, keywords) {
   const mappedData = [];
 
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < keywords.length; i++) {
     const value = [];
     data.yAxis.forEach((element) => {
       value.push(element[i]);
