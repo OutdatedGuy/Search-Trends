@@ -1,0 +1,23 @@
+{
+  "name": "trends-game",
+  "version": "1.0.0",
+  "description": "A guessing game made with Google Trends API",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "google-trends-api": "^4.9.2",
+    "nodemon": "^2.0.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [
+    "google",
+    "google-trends",
+    "guess"
+  ],
+  "author": "OutdatedGuy Aditya",
+  "license": "ISC",
+  "type": "module"
+}
