@@ -65,7 +65,7 @@ function mapMultiLine(data, keywords) {
       backgroundColor: [colors[i]],
       borderColor: [colors[i]],
       borderWidth: 1,
-      lineTension: 0.5,
+      lineTension: 0.3,
     });
   }
   return mappedData;
