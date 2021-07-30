@@ -1,0 +1,11 @@
+#barChart {
+  display: inline-block !important;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+#lineChart {
+  display: inline-block !important;
+  max-width: 1200px;
+  max-height: 400px;
+}
