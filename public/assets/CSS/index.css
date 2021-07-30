@@ -1,5 +1,6 @@
 @import "./inputField.css";
 @import "./chart.css";
+@import "./loading.css";
 
 * {
   margin: 0%;
