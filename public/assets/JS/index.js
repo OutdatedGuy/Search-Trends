@@ -12,13 +12,18 @@ document.getElementById("input-container").addEventListener("keypress", (e) => {
       }
     }
 
-    getLoading(true);
-    getTrends().then(() => {
-      if (inputs.length < 5) {
-        addInput(inputs.length);
-      }
+    if (inputs.length > 0) {
+      getLoading(true);
+      getTrends().then(() => {
+        if (inputs.length < 5) {
+          addInput(inputs.length);
+        }
+        getLoading(false);
+      });
+    } else {
+      addInput(inputs.length);
       getLoading(false);
-    });
+    }
   }
 });
 
