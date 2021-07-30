@@ -1,1 +1,21 @@
-colors = ["#ff0000", "#00ff00", "#0000ff", "#ffcc00", "#800080"];
+colors = [
+  "#ff0000",
+  "#00ff00",
+  "#0000ff",
+  "#ffcc00",
+  "#800080",
+  "#ff00ff",
+  "#00ffff",
+  "#ffff00",
+  "#008080",
+  "#ffffff",
+  "#ffccff",
+  "#808080",
+  "#cccccc",
+  "#c0c0c0",
+  "#ffcccc",
+  "#ccccff",
+  "#ccffcc",
+  "#ccffff",
+  "#ffffcc",
+];
