@@ -8,19 +8,20 @@
   <title>Guess the Trend</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="./assets/CSS/index.css">
+  <link rel="stylesheet" href="./assets/CSS/inputField.css">
 </head>
 
 <body>
+  <button onclick="getTrends()">Click Me</button>
+  <input class="word input" type="text" placeholder="Enter a Word here!">
+  <input class="word input" type="text" placeholder="Enter a Word here!">
+  <input class="word input" type="text" placeholder="Enter a Word here!">
+  <input class="word input" type="text" placeholder="Enter a Word here!">
+  <input class="word input" type="text" placeholder="Enter a Word here!">
   <div>
     <canvas id="barChart"></canvas>
     <canvas id="lineChart"></canvas>
   </div>
-  <button onclick="getTrends()">Click Me</button>
-  <input class="word" type="text" placeholder="Enter a Word here!">
-  <input class="word" type="text" placeholder="Enter a Word here!">
-  <input class="word" type="text" placeholder="Enter a Word here!">
-  <input class="word" type="text" placeholder="Enter a Word here!">
-  <input class="word" type="text" placeholder="Enter a Word here!">
   <script src="./assets/JS/colors.js"></script>
   <script defer src="./assets/JS/sketch.js"></script>
 </body>

@@ -1,0 +1,11 @@
+.input {
+    /* Dark input search element */
+    background-color: rgb(51 54 66);
+    color: #fff;
+    border: 1px solid rgb(51 54 66);
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
