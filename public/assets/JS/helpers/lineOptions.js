@@ -15,7 +15,7 @@ export const lineOptions = {
         },
         ticks: {
           color: "rgba(255, 255, 255, 1)",
-        }
+        },
       },
       x: {
         beginAtZero: true,
@@ -26,7 +26,7 @@ export const lineOptions = {
         },
         ticks: {
           color: "rgba(255, 255, 255, 1)",
-        }
+        },
       },
     },
     plugins: {
@@ -34,6 +34,12 @@ export const lineOptions = {
         labels: {
           color: "rgba(255, 255, 255)",
         },
+      },
+    },
+    elements: {
+      point: {
+        radius: 0,
+        hitRadius: 5,
       },
     },
   },
