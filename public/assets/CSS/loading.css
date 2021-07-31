@@ -1,9 +1,7 @@
 #loading-container {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
+  margin: 220px 0px;
+  justify-content: center;
+  display: flex;
 }
 
 .dash {
