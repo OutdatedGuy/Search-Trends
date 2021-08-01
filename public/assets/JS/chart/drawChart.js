@@ -20,11 +20,13 @@ export let barChart;
  * @param {string[]} keywords - Labels for bar chart.
  */
 export function drawChart(data, keywords) {
+  // If chart already exists, remove it.
   if (lineChart !== undefined && barChart !== undefined) {
     lineChart.destroy();
     barChart.destroy();
   }
 
+  // Create line chart.
   let lineElement = document.getElementById("lineChart").getContext("2d");
   lineOptions.data.labels = data.xAxis;
   lineOptions.data.datasets = mapMultiLine(data, keywords);
@@ -32,6 +34,7 @@ export function drawChart(data, keywords) {
   lineOptions.options.plugins = plugins[theme];
   lineChart = new Chart(lineElement, lineOptions);
 
+  // Create bar chart.
   let barElement = document.getElementById("barChart").getContext("2d");
   barOptions.data.labels = keywords;
   barOptions.data.datasets[0].data = data.average;

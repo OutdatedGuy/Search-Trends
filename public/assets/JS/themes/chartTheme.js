@@ -3,6 +3,7 @@
  * Conatins separate colors for light and dark theme.
  */
 export const scales = {
+  // Color for light theme
   light: {
     y: {
       beginAtZero: true,
@@ -27,6 +28,7 @@ export const scales = {
       },
     },
   },
+  // Color for dark theme
   dark: {
     y: {
       beginAtZero: true,
@@ -58,6 +60,7 @@ export const scales = {
  * Conatins separate colors for light and dark theme.
  */
 export const plugins = {
+  // Color for light theme
   light: {
     legend: {
       labels: {
@@ -65,6 +68,7 @@ export const plugins = {
       },
     },
   },
+  // Color for dark theme
   dark: {
     legend: {
       labels: {

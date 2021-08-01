@@ -6,9 +6,9 @@ import { drawChart } from "../chart/drawChart.js";
  * - After getting the trends, it will draw the chart by calling the drawChart function.
  */
 export async function getTrends() {
+  // Gets the keywords from the input field.
   const keywords = [];
   const element = document.getElementsByClassName("word");
-  // console.log(element.length);
   for (let i = 0; i < element.length; i++) {
     keywords.push(element[i].value);
   }
@@ -17,6 +17,7 @@ export async function getTrends() {
     word: keywords,
   };
 
+  // POST request configuration.
   const arg = {
     method: "POST",
     headers: {
@@ -25,10 +26,11 @@ export async function getTrends() {
     body: JSON.stringify(word),
   };
 
+  // Gets the trends data from the server.
   const res = await fetch("/trends", arg);
-  // let data = await res.text();
   const data = JSON.parse(await res.text());
   // console.log(data);
 
+  // Draws the chart.
   drawChart(data, keywords);
 }

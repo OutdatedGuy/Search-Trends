@@ -6,6 +6,7 @@ import { theme } from "../themes/changeTheme.js";
  * @param {number} id - The number of input boxes available.
  */
 export function addInput(id) {
+  // Add new input box.
   const input = document.createElement("input");
   input.classList.add("word");
   input.classList.add("input");
@@ -13,6 +14,7 @@ export function addInput(id) {
   input.type = "text";
   input.placeholder = "Enter a Word here!";
 
+  // Coloring the input box based on the current theme.
   input.style.backgroundColor = `var(--input-${theme}-bg)`;
   input.style.color = `var(--input-${theme}-text)`;
   input.style.borderColor = `1px solid var(--input-${theme}-bg)`;

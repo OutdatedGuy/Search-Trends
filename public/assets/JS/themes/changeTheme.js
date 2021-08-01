@@ -15,8 +15,10 @@ export let theme = localStorage.getItem("theme") || "light";
  * Stores the theme in localStorage.
  */
 export function changeTheme() {
+  // Get theme from the input.
   theme = document.getElementById("dark-mode").checked ? "dark" : "light";
 
+  // If line chart is active, change the theme.
   if (lineChart !== undefined) {
     lineChart.options.scales = scales[theme];
     lineChart.options.plugins = plugins[theme];
@@ -30,6 +32,7 @@ export function changeTheme() {
     lineChart.update();
   }
 
+  // If bar chart is active, change the theme.
   if (barChart !== undefined) {
     barChart.options.scales = scales[theme];
     barChart.options.plugins = plugins[theme];
@@ -40,10 +43,12 @@ export function changeTheme() {
     barChart.update();
   }
 
+  // Change the theme of the website.
   const html = document.querySelector("html");
   html.style.backgroundColor = `var(--${theme}-mode-bg)`;
   html.style.color = `var(--${theme}-mode-text)`;
 
+  // Change the theme of input boxes.
   const inputBox = document.getElementsByClassName("input");
   for (let i = 0; i < inputBox.length; i++) {
     inputBox[i].style.backgroundColor = `var(--input-${theme}-bg)`;

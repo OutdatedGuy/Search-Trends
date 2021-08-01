@@ -3,6 +3,7 @@ import { theme, changeTheme } from "./themes/changeTheme.js";
 import { addInput } from "./helpers/addInput.js";
 import { getLoading } from "./helpers/getLoading.js";
 
+// Set theme and add input box to the page
 document.addEventListener("DOMContentLoaded", () => {
   if (theme === "dark") {
     document.getElementById("dark-mode").checked = true;
@@ -11,8 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
   addInput(0);
 });
 
+// When ENTER is pressed, show loading and get trends
 document.getElementById("input-container").addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
+    // Removes empty input boxes
     const inputs = document.getElementsByClassName("word input");
     for (let i = 0; i < inputs.length; i++) {
       if (inputs[i].value.length === 0 || !inputs[i].value.trim()) {
@@ -22,6 +25,7 @@ document.getElementById("input-container").addEventListener("keypress", (e) => {
       }
     }
 
+    // Show loading and get trends
     if (inputs.length > 0) {
       getLoading(true);
       getTrends().then(() => {
@@ -37,4 +41,5 @@ document.getElementById("input-container").addEventListener("keypress", (e) => {
   }
 });
 
+// When the dark mode checkbox is clicked, change theme
 document.getElementById("dark-mode").addEventListener("click", changeTheme);
