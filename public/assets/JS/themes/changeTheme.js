@@ -2,8 +2,18 @@ import { lineChart, barChart } from "../chart/drawChart.js";
 import { scales, plugins } from "../themes/chartTheme.js";
 import { colors } from "../helpers/colors.js";
 
+/**
+ * Stores theme of the website.
+ */
 export let theme = localStorage.getItem("theme") || "light";
 
+/**
+ * Changes the theme.
+ * - Changes the theme of the website.
+ * - Changes the theme of the chart.
+ *
+ * Stores the theme in localStorage.
+ */
 export function changeTheme() {
   theme = document.getElementById("dark-mode").checked ? "dark" : "light";
 

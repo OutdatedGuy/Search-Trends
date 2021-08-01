@@ -4,9 +4,21 @@ import { lineOptions } from "../helpers/lineOptions.js";
 import { theme } from "../themes/changeTheme.js";
 import { scales, plugins } from "../themes/chartTheme.js";
 
+/**
+ * Variable to store the line chart object.
+ */
 export let lineChart;
+
+/**
+ * Variable to store the bar chart object.
+ */
 export let barChart;
 
+/**
+ * Draws a line chart and a bar chart with give data.
+ * @param {{xAxis: string[], yAxis: number[][], average: number[]}} data - The data to be used for the chart.
+ * @param {string[]} keywords - Labels for bar chart.
+ */
 export function drawChart(data, keywords) {
   if (lineChart !== undefined && barChart !== undefined) {
     lineChart.destroy();
@@ -28,6 +40,12 @@ export function drawChart(data, keywords) {
   barChart = new Chart(barElement, barOptions);
 }
 
+/**
+ * Sepeartes data for multiline chart.
+ * @param {{yAxis: number[][]}} data - Multiline values.
+ * @param {string[]} keywords - Labels for line chart.
+ * @returns {{label: string, data: number[], backgroundColor: string, borderColor: string, borderWidth: number, lineTension: number}[]} The separated data for the multiline chart.
+ */
 function mapMultiLine(data, keywords) {
   const mappedData = [];
 
@@ -46,5 +64,6 @@ function mapMultiLine(data, keywords) {
       lineTension: 0.3,
     });
   }
+
   return mappedData;
 }

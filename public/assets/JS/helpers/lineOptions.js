@@ -1,3 +1,6 @@
+/**
+ * Options and configuration for the line chart.
+ */
 export const lineOptions = {
   type: "line",
   data: {

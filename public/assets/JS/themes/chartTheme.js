@@ -1,3 +1,7 @@
+/**
+ * Configuration for charts axes.
+ * Conatins separate colors for light and dark theme.
+ */
 export const scales = {
   light: {
     y: {
@@ -49,6 +53,10 @@ export const scales = {
   },
 };
 
+/**
+ * Configuration for chart labels.
+ * Conatins separate colors for light and dark theme.
+ */
 export const plugins = {
   light: {
     legend: {
