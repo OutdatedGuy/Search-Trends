@@ -1,5 +1,5 @@
 import { colors } from "./colors.js";
-import { theme } from "../themes/changeTheme.js"
+import { theme } from "../themes/changeTheme.js";
 
 export const barOptions = {
   type: "bar",
@@ -13,5 +13,9 @@ export const barOptions = {
         borderColor: colors[theme],
       },
     ],
+  },
+  options: {
+    scales: {},
+    plugins: {},
   },
 };

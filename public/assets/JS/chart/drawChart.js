@@ -2,6 +2,7 @@ import { colors } from "../helpers/colors.js";
 import { barOptions } from "../helpers/barOptions.js";
 import { lineOptions } from "../helpers/lineOptions.js";
 import { theme } from "../themes/changeTheme.js";
+import { scales, plugins } from "../themes/chartTheme.js";
 
 export let lineChart;
 export let barChart;
@@ -15,11 +16,15 @@ export function drawChart(data, keywords) {
   let lineElement = document.getElementById("lineChart").getContext("2d");
   lineOptions.data.labels = data.xAxis;
   lineOptions.data.datasets = mapMultiLine(data, keywords);
+  lineOptions.options.scales = scales[theme];
+  lineOptions.options.plugins = plugins[theme];
   lineChart = new Chart(lineElement, lineOptions);
 
   let barElement = document.getElementById("barChart").getContext("2d");
   barOptions.data.labels = keywords;
   barOptions.data.datasets[0].data = data.average;
+  barOptions.options.scales = scales[theme];
+  barOptions.options.plugins = plugins[theme];
   barChart = new Chart(barElement, barOptions);
 }
 
