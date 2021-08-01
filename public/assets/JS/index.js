@@ -1,4 +1,5 @@
 import { getTrends } from "./api/getTrends.js";
+import { theme, changeTheme } from "./themes/changeTheme.js";
 
 document.addEventListener("DOMContentLoaded", addInput.bind(this, 0));
 document.getElementById("input-container").addEventListener("keypress", (e) => {
@@ -34,6 +35,11 @@ function addInput(id) {
   input.id = `input-box${id + 1}`;
   input.type = "text";
   input.placeholder = "Enter a Word here!";
+
+  input.style.backgroundColor = `var(--input-${theme}-bg)`;
+  input.style.color = `var(--input-${theme}-text)`;
+  input.style.borderColor = `1px solid var(--input-${theme}-bg)`;
+
   document.getElementById("input-container").appendChild(input);
 }
 
@@ -48,3 +54,5 @@ function getLoading(start) {
     document.getElementById("lineChart").style.display = "inline-block";
   }
 }
+
+document.getElementById("dark-mode").addEventListener("click", changeTheme);

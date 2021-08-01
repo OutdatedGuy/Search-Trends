@@ -5,13 +5,10 @@
 
   /* Dark mode input box */
   --input-dark-bg: rgb(232, 240, 254);
-  --input-dark-text: -internal-light-dark(black, white);
+  --input-dark-text: black;
 }
 
 .input {
-  background-color: var(--input-light-bg);
-  color: var(--input-light-text);
-  border: 1px solid var(--input-light-bg);
   border-radius: 3px;
   padding: 10px;
   font-size: 14px;
