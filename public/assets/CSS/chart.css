@@ -1,9 +1,17 @@
 #barChart {
   max-width: 200px;
   max-height: 200px;
+  margin-bottom: 30px;
 }
 
 #lineChart {
   max-width: 1200px;
   max-height: 400px;
+}
+
+@media only screen and (max-width: 468px) {
+  #lineChart {
+    max-width: 90%;
+    max-height: 300px;
+  }
 }

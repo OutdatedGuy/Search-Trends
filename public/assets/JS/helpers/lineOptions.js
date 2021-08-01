@@ -6,6 +6,8 @@ export const lineOptions = {
   },
   options: {
     scales: {},
+    maintainAspectRatio: false,
+    responsive: true,
     plugins: {},
     elements: {
       point: {
