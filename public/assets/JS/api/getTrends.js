@@ -1,8 +1,5 @@
 import { drawChart } from "../chart/drawChart.js";
 
-export let myChart;
-export let myChart1;
-
 export async function getTrends() {
   const keywords = [];
   const element = document.getElementsByClassName("word");
