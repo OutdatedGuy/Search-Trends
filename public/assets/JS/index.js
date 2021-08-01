@@ -18,6 +18,7 @@ document.getElementById("input-container").addEventListener("keypress", (e) => {
     // Removes empty input boxes
     const inputs = document.getElementsByClassName("word input");
     for (let i = 0; i < inputs.length; i++) {
+      inputs[i].blur();
       if (inputs[i].value.length === 0 || !inputs[i].value.trim()) {
         document.getElementById(inputs[i].id).remove();
         console.log(inputs.length);
