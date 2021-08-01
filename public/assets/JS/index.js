@@ -21,9 +21,13 @@ document.getElementById("input-container").addEventListener("keypress", (e) => {
       inputs[i].blur();
       if (inputs[i].value.length === 0 || !inputs[i].value.trim()) {
         document.getElementById(inputs[i].id).remove();
-        console.log(inputs.length);
+        // console.log(inputs.length);
         i--;
       }
+    }
+
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].id = `input-box${i + 1}`;
     }
 
     // Show loading and get trends
