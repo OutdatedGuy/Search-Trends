@@ -1,21 +1,4 @@
-export const colors = [
-  "#ff0000",
-  "#00ff00",
-  "#0000ff",
-  "#ffcc00",
-  "#00ffff",
-  "#800080",
-  "#ff00ff",
-  "#ffff00",
-  "#008080",
-  "#ffffff",
-  "#ffccff",
-  "#808080",
-  "#cccccc",
-  "#c0c0c0",
-  "#ffcccc",
-  "#ccccff",
-  "#ccffcc",
-  "#ccffff",
-  "#ffffcc",
-];
+export const colors = {
+  light: ["#ff0000", "#00ff00", "#0000ff", "#ffcc00", "#800080"],
+  dark: ["#ff0000", "#00ff00", "#00ffff", "#ffcc00", "#ff00ff"],
+};
