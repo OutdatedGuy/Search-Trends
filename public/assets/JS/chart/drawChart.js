@@ -42,7 +42,7 @@ function mapMultiLine(data, keywords) {
       data: value,
       backgroundColor: [colors[theme][i]],
       borderColor: [colors[theme][i]],
-      borderWidth: 1,
+      borderWidth: 2,
       lineTension: 0.3,
     });
   }
