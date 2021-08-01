@@ -1,7 +1,7 @@
 #loading-container {
   margin: 220px 0px;
   justify-content: center;
-  display: flex;
+  display: none;
 }
 
 .dash {

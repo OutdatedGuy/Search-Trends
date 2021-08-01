@@ -1,8 +1,17 @@
+:root {
+  /* Light mode input box */
+  --input-light-bg: rgb(51 54 66);
+  --input-light-text: #fff;
+
+  /* Dark mode input box */
+  --input-dark-bg: rgb(232, 240, 254);
+  --input-dark-text: -internal-light-dark(black, white);
+}
+
 .input {
-  /* Dark input search element */
-  background-color: rgb(51 54 66);
-  color: #fff;
-  border: 1px solid rgb(51 54 66);
+  background-color: var(--input-light-bg);
+  color: var(--input-light-text);
+  border: 1px solid var(--input-light-bg);
   border-radius: 3px;
   padding: 10px;
   font-size: 14px;
