@@ -1,7 +1,7 @@
 {
-  "name": "trends-game",
+  "name": "search-trends",
   "version": "1.0.0",
-  "description": "A guessing game made with Google Trends API",
+  "description": "Trends search website made with Google Trends API",
   "main": "index.js",
   "dependencies": {
     "express": "^4.17.1",
@@ -15,7 +15,10 @@
   "keywords": [
     "google",
     "google-trends",
-    "guess"
+    "guess",
+    "compare",
+    "trends",
+    "search"
   ],
   "author": "OutdatedGuy Aditya",
   "license": "ISC",
