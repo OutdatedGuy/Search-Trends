@@ -16,6 +16,7 @@
 - Package is runned over the server side
 
 Syntax:
+
 ```js
 import googleTrends from "google-trends-api";
 
@@ -30,6 +31,7 @@ googleTrends.interestOverTime({
 - Script is runned over the client side
 
 Syntax:
+
 ```html
 <canvas id="myChart" width="400" height="400"></canvas>
 <script>
