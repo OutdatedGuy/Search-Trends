@@ -1,7 +1,13 @@
 import { getTrends } from "./api/getTrends.js";
 import { theme, changeTheme } from "./themes/changeTheme.js";
 
-document.addEventListener("DOMContentLoaded", addInput.bind(this, 0));
+document.addEventListener("DOMContentLoaded", () => {
+  if (theme === "dark") {
+    document.getElementById("dark-mode").checked = true;
+    changeTheme();
+  }
+  addInput(0);
+});
 document.getElementById("input-container").addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     const inputs = document.getElementsByClassName("word input");

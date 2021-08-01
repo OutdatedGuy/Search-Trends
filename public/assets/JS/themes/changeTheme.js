@@ -2,11 +2,10 @@ import { lineChart, barChart } from "../chart/drawChart.js";
 import { scales, plugins } from "../themes/chartTheme.js";
 import { colors } from "../helpers/colors.js";
 
-export let theme = "light";
+export let theme = localStorage.getItem("theme") || "light";
 
 export function changeTheme() {
-  const darkMode = document.getElementById("dark-mode");
-  theme = darkMode.checked ? "dark" : "light";
+  theme = document.getElementById("dark-mode").checked ? "dark" : "light";
 
   if (lineChart !== undefined) {
     lineChart.options.scales = scales[theme];
@@ -41,4 +40,6 @@ export function changeTheme() {
     inputBox[i].style.color = `var(--input-${theme}-text)`;
     inputBox[i].style.borderColor = `1px solid var(--input-${theme}-bg)`;
   }
+
+  localStorage.setItem("theme", theme);
 }
