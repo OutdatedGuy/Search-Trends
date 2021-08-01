@@ -15,3 +15,7 @@
     max-height: 300px;
   }
 }
+
+#chart-container {
+  margin-bottom: 70px;
+}
