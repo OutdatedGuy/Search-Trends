@@ -1,6 +1,3 @@
-import { colors } from "./colors.js";
-import { theme } from "../themes/changeTheme.js";
-
 /**
  * Options and configuration for the bar chart.
  */
@@ -12,8 +9,8 @@ export const barOptions = {
       {
         label: "Searches",
         data: undefined,
-        backgroundColor: colors[theme],
-        borderColor: colors[theme],
+        backgroundColor: undefined,
+        borderColor: undefined,
       },
     ],
   },
