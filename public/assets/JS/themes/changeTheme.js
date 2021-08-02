@@ -5,7 +5,7 @@ import { colors } from "../helpers/colors.js";
 /**
  * Stores theme of the website.
  */
-export let theme = localStorage.getItem("theme") || "light";
+export let theme = localStorage.getItem("theme") || "dark";
 
 /**
  * Changes the theme.

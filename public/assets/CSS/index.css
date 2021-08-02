@@ -9,7 +9,7 @@
 
 :root {
   /* Light mode */
-  --light-mode-bg: #f5f5f5;
+  --light-mode-bg: lightgrey;
   --light-mode-text: black;
 
   /* Dark mode */
@@ -20,7 +20,7 @@
 html {
   background: var(--light-mode-bg);
   color: var(--light-mode-text);
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 14px;
   line-height: 1.5;
   text-align: center;
