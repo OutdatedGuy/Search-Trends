@@ -38,6 +38,8 @@ export function drawChart(data, keywords) {
   let barElement = document.getElementById("barChart").getContext("2d");
   barOptions.data.labels = keywords;
   barOptions.data.datasets[0].data = data.average;
+  barOptions.data.datasets[0].backgroundColor = colors[theme];
+  barOptions.data.datasets[0].borderColor = colors[theme];
   barOptions.options.scales = scales[theme];
   barOptions.options.plugins = plugins[theme];
   barChart = new Chart(barElement, barOptions);
