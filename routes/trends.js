@@ -1,5 +1,13 @@
 import googleTrends from "google-trends-api";
 
+/**
+ * Gets trends data for the given keyword/keywords.
+ * Queries the data for charts.
+ *
+ * @param {Request} req - The HTTP request.
+ * @param {Response} res - The HTTP response.
+ * @returns {{xAxis: string[], yAxis: number[][], average: number[]} | Error} The data for the charts.
+ */
 export async function trends(req, res) {
   const word = req.body.word;
   if (word === undefined) return res.status(400).send("Word is required");
