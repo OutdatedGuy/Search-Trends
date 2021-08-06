@@ -28,7 +28,7 @@ export async function getTrends() {
 
   // Gets the trends data from the server.
   const res = await fetch("/trends", arg);
-  const data = await res.json();
+  const data = JSON.parse(await res.text());
   // console.log(data);
 
   // Draws the chart.
