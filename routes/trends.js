@@ -10,9 +10,18 @@ import googleTrends from "google-trends-api";
  */
 export async function trends(req, res) {
   const word = req.body.word;
-  if (word === undefined) return res.status(400).send("Word is required");
-  else if (word === "" || word === " ")
-    return res.status(400).send("Word cannot be empty");
+  if (!Array.isArray(word))
+    return res.status(400).send({ Message: "Array of word(s) is required!!" });
+  else if (word.length === 0)
+    return res.status(400).send({ Message: "Atleast one word is required!!" });
+  else if (word.length > 5)
+    return res.status(400).send({ Message: "Maximun 5 words are allowed!!" });
+  else {
+    word.forEach((word) => {
+      if (word.length === 0 || !word.trim())
+        return res.status(400).send({ Message: "Word(s) cannot be empty" });
+    });
+  }
 
   const startDate = new Date();
   startDate.setFullYear(startDate.getFullYear() - 1);
@@ -38,6 +47,6 @@ export async function trends(req, res) {
     return res.status(200).send({ xAxis, yAxis, average });
   } catch (err) {
     console.error(err);
-    return res.status(500).send(err);
+    return res.status(500).send({ err });
   }
 }
