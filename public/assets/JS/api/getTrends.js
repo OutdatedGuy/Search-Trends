@@ -1,4 +1,5 @@
 import { drawChart } from "../chart/drawChart.js";
+import { checkError } from "../helpers/checkError.js";
 
 /**
  * Gets trends value for a given keyword/keywords.
@@ -31,6 +32,8 @@ export async function getTrends() {
   const data = await res.json();
   // console.log(data);
 
+  const err = checkError(res.status, data.message);
+
   // Draws the chart.
-  drawChart(data, keywords);
+  drawChart(data, keywords, err);
 }

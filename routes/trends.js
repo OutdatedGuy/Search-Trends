@@ -11,15 +11,15 @@ import googleTrends from "google-trends-api";
 export async function trends(req, res) {
   const word = req.body.word;
   if (!Array.isArray(word))
-    return res.status(400).send({ Message: "Array of word(s) is required!!" });
+    return res.status(400).send({ message: "Array of word(s) is required!!" });
   else if (word.length === 0)
-    return res.status(400).send({ Message: "Atleast one word is required!!" });
+    return res.status(400).send({ message: "Atleast one word is required!!" });
   else if (word.length > 5)
-    return res.status(400).send({ Message: "Maximun 5 words are allowed!!" });
+    return res.status(400).send({ message: "Maximun 5 words are allowed!!" });
   else {
     word.forEach((word) => {
       if (word.length === 0 || !word.trim())
-        return res.status(400).send({ Message: "Word(s) cannot be empty" });
+        return res.status(400).send({ message: "Word(s) cannot be empty" });
     });
   }
 

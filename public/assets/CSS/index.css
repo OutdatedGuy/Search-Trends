@@ -31,3 +31,11 @@ html {
   right: 20px;
   top: 10px;
 }
+
+#error {
+  color: red;
+  font-size: 34px;
+  font-weight: bold;
+  margin-top: 50px;
+  text-align: center;
+}

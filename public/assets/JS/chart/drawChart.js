@@ -19,12 +19,14 @@ export let barChart;
  * @param {{xAxis: string[], yAxis: number[][], average: number[]}} data - The data to be used for the chart.
  * @param {string[]} keywords - Labels for bar chart.
  */
-export function drawChart(data, keywords) {
+export function drawChart(data, keywords, err) {
   // If chart already exists, remove it.
   if (lineChart !== undefined && barChart !== undefined) {
     lineChart.destroy();
     barChart.destroy();
   }
+
+  if (err) return;
 
   // Create line chart.
   let lineElement = document.getElementById("lineChart").getContext("2d");
