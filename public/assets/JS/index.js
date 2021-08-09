@@ -33,8 +33,9 @@ document.getElementById("input-container").addEventListener("keypress", (e) => {
     // Show loading and get trends
     if (inputs.length > 0) {
       getLoading(true);
-      getTrends().then(() => {
-        if (inputs.length < 5) {
+      document.getElementById("error").style.display = "none";
+      getTrends().then(success => {
+        if (inputs.length < 5 && success) {
           addInput(inputs.length);
         }
         getLoading(false);

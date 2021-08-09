@@ -1,9 +1,6 @@
 export function checkError(status, message) {
-  const element = document.getElementById("error");
-  if (status === 200) {
-    element.style.display = "none";
-    return false;
-  } else {
+  if (status !== 200) {
+    const element = document.getElementById("error");
     element.style.display = "inline-block";
     if (status === 400) {
       element.innerText = message;
@@ -12,4 +9,6 @@ export function checkError(status, message) {
     }
     return true;
   }
+
+  return false;
 }

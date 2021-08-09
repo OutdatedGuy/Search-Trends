@@ -5,6 +5,8 @@ import { checkError } from "../helpers/checkError.js";
  * Gets trends value for a given keyword/keywords.
  * - Trend value is within 1 year range.
  * - After getting the trends, it will draw the chart by calling the drawChart function.
+ *
+ * @returns {boolean} If data is successfully retrieved, it will return true.
  */
 export async function getTrends() {
   // Gets the keywords from the input field.
@@ -36,4 +38,6 @@ export async function getTrends() {
 
   // Draws the chart.
   drawChart(data, keywords, err);
+
+  return !err;
 }
