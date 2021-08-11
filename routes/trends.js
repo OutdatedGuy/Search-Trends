@@ -9,13 +9,18 @@ import googleTrends from "google-trends-api";
  * @returns {{xAxis: string[], yAxis: number[][], average: number[]} | Error} The data for the charts.
  */
 export async function trends(req, res) {
+  // Get the keyword(s) from the request.
   const word = req.body.word;
+
+  // Check if the keyword is valid.
   if (!Array.isArray(word))
     return res.status(400).send({ message: "Array of word(s) is required!!" });
   else if (word.length === 0)
     return res.status(400).send({ message: "Atleast one word is required!!" });
   else if (word.length > 5)
     return res.status(400).send({ message: "Maximun 5 words are allowed!!" });
+  else if (!word.every((ele) => typeof ele === "string"))
+    return res.status(400).send({ message: "All words should be strings!!" });
   else {
     word.forEach((word) => {
       if (word.length === 0 || !word.trim())
@@ -23,9 +28,11 @@ export async function trends(req, res) {
     });
   }
 
+  // Get the start date (i.e. 1 year ago from today).
   const startDate = new Date();
   startDate.setFullYear(startDate.getFullYear() - 1);
   try {
+    // Get the data from Google Trends.
     let result = await googleTrends.interestOverTime({
       keyword: word,
       startTime: startDate,
@@ -33,6 +40,7 @@ export async function trends(req, res) {
     // console.log(result);
     result = JSON.parse(result);
 
+    // Separate the data into x-axis and y-axis.
     const yAxis = [],
       xAxis = [];
     result.default.timelineData.forEach(function (item) {
