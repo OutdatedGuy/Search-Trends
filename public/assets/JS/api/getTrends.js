@@ -13,7 +13,7 @@ export async function getTrends() {
   const keywords = [];
   const element = document.getElementsByClassName("word");
   for (let i = 0; i < element.length; i++) {
-    keywords.push(element[i].value);
+    keywords.push(element[i].value.trim());
   }
 
   const word = {

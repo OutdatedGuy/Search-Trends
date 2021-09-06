@@ -22,9 +22,10 @@ export async function trends(req, res) {
   else if (!word.every((ele) => typeof ele === "string"))
     return res.status(400).send({ message: "All words should be strings!!" });
   else {
-    word.forEach((word) => {
-      if (word.length === 0 || !word.trim())
+    word.forEach((keyword, index) => {
+      if (keyword.length === 0 || !keyword.trim())
         return res.status(400).send({ message: "Word(s) cannot be empty" });
+      word[index] = keyword.trim();
     });
   }
 
