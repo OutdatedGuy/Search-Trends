@@ -4,7 +4,7 @@
  */
 export const colors = {
   // Light theme colors
-  light: ["#ff0000", "#00ff00", "#0000ff", "#ffcc00", "#800080"],
+  light: ["#ff0000", "#006900", "#0000ff", "#ff9922", "#800080"],
   // Dark theme colors
   dark: ["#ff0000", "#00ff00", "#00ffff", "#ffcc00", "#ff00ff"],
 };
