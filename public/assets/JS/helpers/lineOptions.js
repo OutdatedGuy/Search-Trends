@@ -15,7 +15,7 @@ export const lineOptions = {
     elements: {
       point: {
         radius: 0,
-        hitRadius: 5,
+        hitRadius: 10,
       },
     },
   },
