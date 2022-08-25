@@ -1,6 +1,6 @@
 {
   "name": "search-trends",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Trends search website made with Google Trends API",
   "main": "index.js",
   "dependencies": {
