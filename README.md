@@ -42,7 +42,7 @@ Syntax:
 
 # Using my API
 
-- Link:- https://outdated-trends.herokuapp.com/trends
+- Link:- https://outdated-trends.outdatedguy.rocks/trends
 - Request Body:- Object with property `word` whose value is array of string(s) [i.e array of words to be searched]
 - Method:- POST
 - Content-Type: application/json
@@ -64,7 +64,7 @@ Example:
     body: JSON.stringify(word),
   };
 
-  const res = await fetch("https://outdated-trends.herokuapp.com/trends", arg);
+  const res = await fetch("https://outdated-trends.outdatedguy.rocks/trends", arg);
   const data = await res.json();
   console.log(data);
 })();

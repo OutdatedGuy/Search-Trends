@@ -1,16 +1,17 @@
 {
   "name": "search-trends",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Trends search website made with Google Trends API",
   "main": "index.js",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "google-trends-api": "^4.9.2",
-    "nodemon": "^2.0.12"
+    "firebase": "^9.0.1",
+    "google-trends-api": "^4.9.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [
     "google",
@@ -20,7 +21,10 @@
     "trends",
     "search"
   ],
-  "author": "OutdatedGuy Aditya",
+  "author": "OutdatedGuy, Aditya",
   "license": "BSD 3-Clause",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
